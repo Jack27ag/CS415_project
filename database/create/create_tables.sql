@@ -4,7 +4,7 @@ CREATE TABLE
         first_name VARCHAR(255),
         last_name VARCHAR(255),
         email VARCHAR(255),
-        password VARCHAR(255),
+        pass_word VARCHAR(255),
         created_date DATETIME,
         is_active BOOLEAN,
         username VARCHAR(255)
@@ -16,7 +16,7 @@ CREATE TABLE
         user_id INT,
         street_address VARCHAR(255),
         city VARCHAR(255),
-        state VARCHAR(255),
+        st VARCHAR(255),
         zip_code VARCHAR(255),
         country VARCHAR(255),
         CONSTRAINT fk_user_address_user_id FOREIGN KEY (user_id) REFERENCES user (user_id)
@@ -27,7 +27,7 @@ CREATE TABLE
         driver_license_id INT PRIMARY KEY AUTO_INCREMENT,
         user_id INT,
         driver_license_number INT,
-        state_or_province VARCHAR(255),
+        st VARCHAR(255),
         expiration_date DATE,
         issue_date DATE,
         CONSTRAINT fk_driver_license_user_id FOREIGN KEY (user_id) REFERENCES user (user_id)
@@ -40,7 +40,7 @@ CREATE TABLE
         vehicle_type VARCHAR(255),
         make VARCHAR(255),
         model VARCHAR(255),
-        year YEAR,
+        production_year YEAR,
         color VARCHAR(255),
         CONSTRAINT fk_vehicle_user_id FOREIGN KEY (user_id) REFERENCES user (user_id)
     );
